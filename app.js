@@ -25,16 +25,18 @@ app.get('/about', (req, res) => {          //loading about page
     res.render('about');
 });
 
-app.post('/index', (req, res) => {
+app.post('/showWeather', (req, res) => {
     var City = JSON.stringify(req.body.cityName, undefined, 2);
 
     geocode.geocodeAddress(City, (errorMsg, results) => {
         if (errorMsg) {
             console.log(errorMsg);
         } else {
-            res.render('/', {
+            res.render('showWeather', {
                 Temperature: results.Temperature,
-                city: results.city
+                city: results.city,
+                max_Temperature: results.max_Temperature,
+                min_Temperature: results.min_Temperature
             })
         }
     });

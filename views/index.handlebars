@@ -1,21 +1,12 @@
-<div class="jumbotron">
+<div class="jumbotron mt-3">
   <h1 class="text-center">
     Welcome to Know Weather
   </h1>
 </div>
-<form action="/index" method="POST">
+<form action="/showWeather" method="POST">
   <div class="form-group">
     <label for="cityName">Enter the Name of City</label>
     <input type="text" class="form-control" name="cityName" required>
   </div>
   <button type="submit" class="btn btn-info">Submit</button>
 </form>
-
-{{#each Temperature}}
-
-<div class="card">
- {{Temperature}}
-{{city}}
-</div> 
-
-{{/each}}

@@ -13,7 +13,9 @@ var geocodeAddress = (address, callback) => {
         } else {
             callback(undefined, {
                 Temperature: body.main.temp,
-                city: body.name
+                city: body.name,
+                max_Temperature: body.main.temp_max,
+                min_Temperature: body.main.temp_min,
             });
         }
     });
